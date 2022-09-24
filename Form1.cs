@@ -46,6 +46,10 @@ namespace CalcTotalJeton
                 result += long.Parse(Regex.Replace(jeton, @"\s+", ""));
                 bountyInGame += long.Parse(Regex.Replace(bounty, @"\s+", ""));
             }
+
+            jetonListLabel.Text = result.ToString("N0");
+            bountyListLabel.Text = bountyInGame.ToString("N0");
+
             if (bountyInGame == 0) calculJetonLabel.Text = result.ToString("N0");
 
             result += (bountyPerPlayerNum.Value * totalPlayerNum.Value - bountyInGame) * valueBountyNum.Value;
@@ -158,6 +162,11 @@ namespace CalcTotalJeton
                 WrapperCalcul();
                 e.Handled = true; //coupe le son au passage le ding
             }
+        }
+
+        private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            WrapperCalcul();
         }
     }
 }
