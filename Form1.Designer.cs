@@ -62,6 +62,9 @@
             this.jetonListLabel = new System.Windows.Forms.Label();
             this.bountyListLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pourcentLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.startStackNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalPlayerNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bountyPerPlayerNum)).BeginInit();
@@ -71,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.jetonAddNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bountyAddNum)).BeginInit();
             this.infoGB.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // currentJetonLabel
@@ -78,7 +82,7 @@
             this.currentJetonLabel.AutoSize = true;
             this.currentJetonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentJetonLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.currentJetonLabel.Location = new System.Drawing.Point(693, 418);
+            this.currentJetonLabel.Location = new System.Drawing.Point(125, 112);
             this.currentJetonLabel.Name = "currentJetonLabel";
             this.currentJetonLabel.Size = new System.Drawing.Size(24, 20);
             this.currentJetonLabel.TabIndex = 1;
@@ -205,7 +209,7 @@
             this.calculJetonLabel.AutoSize = true;
             this.calculJetonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculJetonLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.calculJetonLabel.Location = new System.Drawing.Point(693, 477);
+            this.calculJetonLabel.Location = new System.Drawing.Point(125, 171);
             this.calculJetonLabel.Name = "calculJetonLabel";
             this.calculJetonLabel.Size = new System.Drawing.Size(24, 20);
             this.calculJetonLabel.TabIndex = 12;
@@ -222,7 +226,7 @@
             this.bountyCol});
             this.dataGridView1.Location = new System.Drawing.Point(12, 85);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(567, 446);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 497);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
@@ -331,16 +335,16 @@
             this.infoGB.Controls.Add(this.bountyInGameNum);
             this.infoGB.Location = new System.Drawing.Point(585, 12);
             this.infoGB.Name = "infoGB";
-            this.infoGB.Size = new System.Drawing.Size(310, 296);
+            this.infoGB.Size = new System.Drawing.Size(328, 296);
             this.infoGB.TabIndex = 21;
             this.infoGB.TabStop = false;
-            this.infoGB.Text = "Info start";
+            this.infoGB.Text = "Info départ";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(613, 398);
+            this.label9.Location = new System.Drawing.Point(25, 90);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(273, 20);
             this.label9.TabIndex = 22;
@@ -349,18 +353,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(613, 457);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 151);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(266, 20);
+            this.label10.Size = new System.Drawing.Size(296, 16);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Total calcul jeton (+/non bounty)";
+            this.label10.Text = "Différence entre jeton en jeu et info départ";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(642, 336);
+            this.label11.Location = new System.Drawing.Point(70, 28);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(190, 20);
             this.label11.TabIndex = 25;
@@ -371,7 +375,7 @@
             this.totalJetonLabel.AutoSize = true;
             this.totalJetonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalJetonLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.totalJetonLabel.Location = new System.Drawing.Point(693, 356);
+            this.totalJetonLabel.Location = new System.Drawing.Point(125, 50);
             this.totalJetonLabel.Name = "totalJetonLabel";
             this.totalJetonLabel.Size = new System.Drawing.Size(24, 20);
             this.totalJetonLabel.TabIndex = 24;
@@ -381,9 +385,9 @@
             // calculerButton
             // 
             this.calculerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculerButton.Location = new System.Drawing.Point(585, 530);
+            this.calculerButton.Location = new System.Drawing.Point(585, 565);
             this.calculerButton.Name = "calculerButton";
-            this.calculerButton.Size = new System.Drawing.Size(310, 42);
+            this.calculerButton.Size = new System.Drawing.Size(328, 42);
             this.calculerButton.TabIndex = 26;
             this.calculerButton.Text = "CALCULER";
             this.calculerButton.UseVisualStyleBackColor = true;
@@ -393,7 +397,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 548);
+            this.label6.Location = new System.Drawing.Point(11, 587);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 20);
             this.label6.TabIndex = 27;
@@ -404,7 +408,7 @@
             this.jetonListLabel.AutoSize = true;
             this.jetonListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jetonListLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.jetonListLabel.Location = new System.Drawing.Point(134, 548);
+            this.jetonListLabel.Location = new System.Drawing.Point(130, 587);
             this.jetonListLabel.Name = "jetonListLabel";
             this.jetonListLabel.Size = new System.Drawing.Size(24, 20);
             this.jetonListLabel.TabIndex = 28;
@@ -416,7 +420,7 @@
             this.bountyListLabel.AutoSize = true;
             this.bountyListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bountyListLabel.ForeColor = System.Drawing.Color.ForestGreen;
-            this.bountyListLabel.Location = new System.Drawing.Point(461, 548);
+            this.bountyListLabel.Location = new System.Drawing.Point(457, 587);
             this.bountyListLabel.Name = "bountyListLabel";
             this.bountyListLabel.Size = new System.Drawing.Size(24, 20);
             this.bountyListLabel.TabIndex = 30;
@@ -427,26 +431,62 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(331, 548);
+            this.label13.Location = new System.Drawing.Point(327, 587);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(124, 20);
             this.label13.TabIndex = 29;
             this.label13.Text = "Bounty en jeu:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pourcentLabel);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.currentJetonLabel);
+            this.groupBox1.Controls.Add(this.calculJetonLabel);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.totalJetonLabel);
+            this.groupBox1.Location = new System.Drawing.Point(585, 314);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(328, 245);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Resultat";
+            // 
+            // pourcentLabel
+            // 
+            this.pourcentLabel.AutoSize = true;
+            this.pourcentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pourcentLabel.ForeColor = System.Drawing.Color.ForestGreen;
+            this.pourcentLabel.Location = new System.Drawing.Point(125, 216);
+            this.pourcentLabel.Name = "pourcentLabel";
+            this.pourcentLabel.Size = new System.Drawing.Size(24, 20);
+            this.pourcentLabel.TabIndex = 26;
+            this.pourcentLabel.Text = "...";
+            this.pourcentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(32, 200);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(267, 16);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Différence en pourcentage (OK +/-2%)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 584);
+            this.ClientSize = new System.Drawing.Size(925, 619);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bountyListLabel);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.jetonListLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.calculerButton);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.totalJetonLabel);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.infoGB);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.pseudoAddTB);
@@ -456,8 +496,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.jetonAddNum);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.calculJetonLabel);
-            this.Controls.Add(this.currentJetonLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -474,6 +512,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bountyAddNum)).EndInit();
             this.infoGB.ResumeLayout(false);
             this.infoGB.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,6 +554,9 @@
         private System.Windows.Forms.Label jetonListLabel;
         private System.Windows.Forms.Label bountyListLabel;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label pourcentLabel;
+        private System.Windows.Forms.Label label14;
     }
 }
 

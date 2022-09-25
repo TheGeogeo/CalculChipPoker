@@ -22,19 +22,25 @@ namespace CalcTotalJeton
         {
         }
 
-        public void CalculFinalEstimat()
+        public decimal CalculFinalEstimat()
         {
             decimal result = 0;
 
             result = startStackNum.Value * totalPlayerNum.Value;
-            if (bountyPerPlayerNum.Value == 0) currentJetonLabel.Text = result.ToString("N0");
+            if (bountyPerPlayerNum.Value == 0)
+            {
+                currentJetonLabel.Text = result.ToString("N0");
+                return result;
+            }
 
             result += (bountyPerPlayerNum.Value * totalPlayerNum.Value - bountyInGameNum.Value) * valueBountyNum.Value;
 
             currentJetonLabel.Text = result.ToString("N0");
+
+            return result;
         }
 
-        public void CalculFinal()
+        public decimal CalculFinal()
         {
             decimal result = 0;
             long bountyInGame = 0;
@@ -50,11 +56,37 @@ namespace CalcTotalJeton
             jetonListLabel.Text = result.ToString("N0");
             bountyListLabel.Text = bountyInGame.ToString("N0");
 
-            if (bountyInGame == 0) calculJetonLabel.Text = result.ToString("N0");
+            return result;
+        }
 
-            result += (bountyPerPlayerNum.Value * totalPlayerNum.Value - bountyInGame) * valueBountyNum.Value;
+        public void CalculeDiff(decimal chipPlayer, decimal chipLogic)
+        {
+            decimal diff = chipPlayer - chipLogic;
+            decimal pourcent = chipLogic - chipPlayer;
 
-            calculJetonLabel.Text = result.ToString("N0");
+            if (chipLogic != 0)
+            {
+                pourcent = chipPlayer - chipLogic;
+                pourcent = pourcent / chipLogic;
+                pourcent = pourcent * 100;
+            }
+
+            if (Math.Abs(pourcent) <= (decimal)2)
+            {
+                calculJetonLabel.Text = "+" + diff.ToString("N0");
+                calculJetonLabel.ForeColor = Color.ForestGreen;
+                pourcentLabel.ForeColor = Color.ForestGreen;
+                if (chipLogic != 0) pourcentLabel.Text = "+" + pourcent.ToString("N2") + "%";
+                else pourcentLabel.Text = "...";
+            }
+            else
+            {
+                calculJetonLabel.Text = diff.ToString("N0");
+                calculJetonLabel.ForeColor = Color.DarkRed;
+                pourcentLabel.ForeColor = Color.DarkRed;
+                if (chipLogic != 0) pourcentLabel.Text = pourcent.ToString("N2") + "%";
+                else pourcentLabel.Text = "...";
+            }
         }
 
         public void CalculFinalTotal()
@@ -71,9 +103,8 @@ namespace CalcTotalJeton
 
         public void WrapperCalcul()
         {
-            CalculFinalEstimat();
             CalculFinalTotal();
-            CalculFinal();
+            CalculeDiff(CalculFinal(), CalculFinalEstimat());
         }
 
         public void AddRowManuel()
