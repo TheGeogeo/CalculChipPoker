@@ -59,6 +59,7 @@ namespace CalcTotalJeton
             return result;
         }
 
+        //Permet de calculer la différence selon les jetons normalement en jeton et les réel jetons en jeu
         public void CalculeDiff(decimal chipPlayer, decimal chipLogic)
         {
             decimal diff = chipPlayer - chipLogic;
@@ -73,18 +74,38 @@ namespace CalcTotalJeton
 
             if (Math.Abs(pourcent) <= (decimal)2)
             {
-                calculJetonLabel.Text = "+" + diff.ToString("N0");
+                if (diff >= 0)
+                    calculJetonLabel.Text = "+" + diff.ToString("N0");
+                else
+                    calculJetonLabel.Text = diff.ToString("N0");
+
                 calculJetonLabel.ForeColor = Color.ForestGreen;
                 pourcentLabel.ForeColor = Color.ForestGreen;
-                if (chipLogic != 0) pourcentLabel.Text = "+" + pourcent.ToString("N2") + "%";
+                if (chipLogic != 0)
+                {
+                    if (diff >= 0)
+                        pourcentLabel.Text = "+" + pourcent.ToString("N2") + "%";
+                    else
+                        pourcentLabel.Text = pourcent.ToString("N2") + "%";
+                }
                 else pourcentLabel.Text = "...";
             }
             else
             {
-                calculJetonLabel.Text = diff.ToString("N0");
+                if (diff >= 0)
+                    calculJetonLabel.Text = "+" + diff.ToString("N0");
+                else
+                    calculJetonLabel.Text = diff.ToString("N0");
+
                 calculJetonLabel.ForeColor = Color.DarkRed;
                 pourcentLabel.ForeColor = Color.DarkRed;
-                if (chipLogic != 0) pourcentLabel.Text = pourcent.ToString("N2") + "%";
+                if (chipLogic != 0)
+                {
+                    if (diff >= 0)
+                        pourcentLabel.Text = "+" + pourcent.ToString("N2") + "%";
+                    else
+                        pourcentLabel.Text = pourcent.ToString("N2") + "%";
+                }
                 else pourcentLabel.Text = "...";
             }
         }
